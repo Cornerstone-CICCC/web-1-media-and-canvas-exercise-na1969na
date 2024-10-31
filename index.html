@@ -1,23 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Exercise</title>
-</head>
-<body>
-  <div class="container">
-    <!-- AUDIO HTML GOES HERE -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Exercise</title>
+    <style>
+      body {
+          background: green url('assets/background.jpg') no-repeat bottom center;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- AUDIO HTML GOES HERE -->
+      <audio controls muted loop>
+        <source src="assets/audio/piano.wav" type="audio/wav" />
+        <p>Your browser does not support the audio element.</p>
+      </audio>
 
-    <!-- VIDEO HTML GOES HERE -->
+      <!-- VIDEO HTML GOES HERE -->
+      <video controls muted poster="assets/poster.jpg">
+        <source src="assets/video/ocean.mp4" type="video/mp4" />
+        <p>Your browser does not support the audio element.</p>
+      </video>
 
-    <!-- IMAGE MAP HTML GOES HERE-->
+      <!-- IMAGE MAP HTML GOES HERE-->
+      <img src="assets/images/fruit_table.jpg" usemap="#fruitmap" width="400" />
+      <map name="fruitmap">
+        <area
+          shape="rect"
+          coords="40,44,200,350"
+          alt="Lavender"
+          href="https://en.wikipedia.org/wiki/Lavandula"
+        />
+        <area
+          shape="rect"
+          coords="290,200,350,450"
+          alt="Oranges"
+          href="https://en.wikipedia.org/wiki/Orange_(fruit)"
+        />
+        <area
+          shape="circle"
+          coords="300,150,50"
+          alt="Coffee"
+          href="https://en.wikipedia.org/wiki/Coffee"
+        />
+      </map>
+      <!-- CANVAS HTML GOES HERE -->
+      <canvas
+        id="myCanvas"
+        width="500"
+        height="500"
+        style="border: 1px solid #000000; background-color: lightgrey"
+      ></canvas>
+      <script>
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
 
-    <!-- CANVAS HTML GOES HERE -->
-  </div>
+        // Draw square with different colored lines
+        context.strokeStyle = "red";
+        context.beginPath();
+        context.moveTo(50, 50);
+        context.lineTo(450, 50);
+        context.stroke();
 
-  <script>
-    /* CANVAS JAVASCRIPT GOES HERE */
-  </script>
-</body>
+        context.strokeStyle = "blue";
+        context.beginPath();
+        context.moveTo(450, 50);
+        context.lineTo(450, 450);
+        context.stroke();
+
+        context.strokeStyle = "green";
+        context.beginPath();
+        context.moveTo(450, 450);
+        context.lineTo(50, 450);
+        context.stroke();
+
+        context.strokeStyle = "yellow";
+        context.beginPath();
+        context.moveTo(50, 450);
+        context.lineTo(50, 50);
+        context.stroke();
+      </script>
+    </div>
+
+    <script>
+      /* CANVAS JAVASCRIPT GOES HERE */
+    </script>
+  </body>
 </html>
